@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "id": "1",
+    "title": "Configurar base de datos",
+    "description": "Configurar la conexion a la base de datos del proyecto",
+    "status": "completed",
+    "createdAt": "2026-03-28T10:00:00.000Z",
+    "updatedAt": "2026-03-28T14:30:00.000Z"
+  },
+  {
+    "id": "2",
+    "title": "Disenar interfaz de usuario",
+    "description": "Crear los mockups de la interfaz principal",
+    "status": "in-progress",
+    "createdAt": "2026-03-28T11:00:00.000Z",
+    "updatedAt": "2026-03-28T14:45:00.000Z"
+  },
+  {
+    "id": "3",
+    "title": "Escribir pruebas unitarias",
+    "description": "Agregar tests para los endpoints de la API",
+    "status": "pending",
+    "createdAt": "2026-03-28T12:00:00.000Z",
+    "updatedAt": "2026-03-28T12:00:00.000Z"
+  }
+]
