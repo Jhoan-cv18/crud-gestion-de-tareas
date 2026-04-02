@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Tareas - CRUD</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>📝 Gestión de Tareas</h1>
+      <p class="subtitle">CRUD API + Frontend</p>
+    </header>
+
+    <main class="main-content">
+      <section class="form-section">
+        <div class="form-container">
+          <h2 id="form-title">Crear Nueva Tarea</h2>
+
+          <form id="taskForm" class="task-form">
+            <div class="form-group">
+              <label for="taskTitle">Título *</label>
+              <input
+                type="text"
+                id="taskTitle"
+                name="title"
+                placeholder="Ingrese el título de la tarea"
+                maxlength="100"
+                required
+              >
+              <span class="char-count">0/100</span>
+            </div>
+
+            <div class="form-group">
+              <label for="taskDescription">Descripción</label>
+              <textarea
+                id="taskDescription"
+                name="description"
+                placeholder="Ingrese una descripción opcional"
+                maxlength="500"
+                rows="4"
+              ></textarea>
+              <span class="char-count">0/500</span>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="taskStatus">Estado</label>
+                <select id="taskStatus" name="status">
+                  <option value="pending">Pendiente</option>
+                  <option value="in-progress">En Progreso</option>
+                  <option value="completed">Completada</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" id="submitBtn" class="btn btn-primary">
+                Crear Tarea
+              </button>
+              <button type="reset" id="resetBtn" class="btn btn-secondary">
+                Limpiar
+              </button>
+              <button type="button" id="cancelBtn" class="btn btn-secondary" style="display: none;">
+                Cancelar
+              </button>
+            </div>
+          </form>
+
+          <div id="statusMessage" class="status-message"></div>
+        </div>
+      </section>
+
+      <section class="search-section">
+        <div class="search-container">
+          <div class="search-controls">
+            <div class="search-group">
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="🔍 Buscar tareas..."
+                maxlength="200"
+              >
+            </div>
+
+            <div class="filter-group">
+              <select id="statusFilter">
+                <option value="">Todos los estados</option>
+                <option value="pending">Pendiente</option>
+                <option value="in-progress">En Progreso</option>
+                <option value="completed">Completada</option>
+              </select>
+            </div>
+
+            <button id="clearFiltersBtn" class="btn btn-tertiary">
+              Limpiar Filtros
+            </button>
+          </div>
+
+          <div class="task-count">
+            <span id="taskCounter">Cargando tareas...</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="tasks-section">
+        <div id="tasksContainer" class="tasks-container">
+          <div class="loading-message">
+            <p>Cargando tareas...</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2024 Gestión de Tareas - CRUD. Proyecto de Git Flow</p>
+    </footer>
+  </div>
+
+  <div id="confirmModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <h3 id="modalTitle">Confirmar acción</h3>
+      <p id="modalMessage">¿Está seguro?</p>
+      <div class="modal-actions">
+        <button id="confirmBtn" class="btn btn-primary">Confirmar</button>
+        <button id="cancelModalBtn" class="btn btn-secondary">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
